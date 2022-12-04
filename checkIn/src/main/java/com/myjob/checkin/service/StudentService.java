@@ -3,6 +3,7 @@ package com.myjob.checkin.service;
 import com.myjob.checkin.pojo.Student;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.myjob.checkin.pojo.Student;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
 * @author 73493
@@ -11,4 +12,5 @@ import com.myjob.checkin.pojo.Student;
 */
 public interface StudentService extends IService<Student> {
 
+    void saveStudent(MultipartFile file, StudentService studentService);
 }

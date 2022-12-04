@@ -1,22 +1,21 @@
 package com.myjob.checkin.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
+
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 
  * @TableName t_student
  */
-@TableName(value ="t_student")
+@TableName(value = "t_student")
 @Data
 public class Student implements Serializable {
     /**
-     * 
+     *
      */
     private Long id;
 
@@ -31,13 +30,17 @@ public class Student implements Serializable {
     private String major;
 
     /**
-     * 
+     *
      */
+    @ApiModelProperty("创建日期")
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     /**
-     * 
+     *
      */
+    @ApiModelProperty("最后修改日期")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date modifyTime;
 
     @TableField(exist = false)
